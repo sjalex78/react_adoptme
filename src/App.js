@@ -1,8 +1,8 @@
-const Pet = () => {
+const Pet = (props) => {
     return React.createElement("div", {},[
-        React.createElement("h1", {}, "Corri"),
-        React.createElement("h2", {}, "Dog"),
-        React.createElement("h2", {}, "GSP")
+        React.createElement("h1", {}, props.name),
+        React.createElement("h2", {}, props.animal),
+        React.createElement("h2", {}, props.breed)
     ]);
 };
 
@@ -12,9 +12,9 @@ const App = () => {
         {}, //attributes style tag, class name needs to be an empty object of null
         [
             React.createElement ("h1", {} , "Adopt Me!"), //children
-            React.createElement(Pet),
-            React.createElement(Pet),
-            React.createElement(Pet)
+            React.createElement(Pet, {name: "Corri", animal: "Dog", breed: "GSP"}),
+            React.createElement(Pet, {name: "Pomi", animal: "Cat", breed: "median hair"}),
+            React.createElement(Pet, {name: "Java", animal: "Chicken", breed: "Isa"})
         ]);
 };
 
