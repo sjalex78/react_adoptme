@@ -1,39 +1,17 @@
-import React from "react";
 import { createRoot } from "react-dom/client";
-
-const Pet = (props) => {
-  return React.createElement("div", {}, [
-    React.createElement("h1", {}, props.name),
-    React.createElement("h2", {}, props.animal),
-    React.createElement("h2", {}, props.breed),
-  ]);
-};
+import Pet from "./Pet";
 
 const App = () => {
-  return React.createElement(
-    "div", // it will render this
-    {}, //attributes style tag, class name needs to be an empty object of null
-    [
-      React.createElement("h1", {}, "Adopt Me!"), //children
-      React.createElement(Pet, {
-        name: "Corri",
-        animal: "Dog",
-        breed: "GSP",
-      }),
-      React.createElement(Pet, {
-        name: "Pomi",
-        animal: "Cat",
-        breed: "median hair",
-      }),
-      React.createElement(Pet, {
-        name: "Java",
-        animal: "Chicken",
-        breed: "Isa",
-      }),
-    ]
+  return (
+    <div>
+      <h1>Adopt Me!</h1>
+      <Pet name="Corri" breed="GSP" animal="dog" />
+      <Pet name="Pomi" breed="median hair" animal="cat" />
+      <Pet name="Java" breed="Isa" animal="chicken" />
+    </div>
   );
 };
 
 const container = document.getElementById("root");
 const root = createRoot(container); //was in previous versions reactDom.render(container, </App>);
-root.render(React.createElement(App)); //jsx will do the React.createElement
+root.render(<App />); //jsx will do the React.createElement
