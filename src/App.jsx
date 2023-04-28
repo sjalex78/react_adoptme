@@ -1,3 +1,6 @@
+import React from "react";
+import { createRoot } from "react-dom/client";
+
 const Pet = (props) => {
   return React.createElement("div", {}, [
     React.createElement("h1", {}, props.name),
@@ -32,5 +35,5 @@ const App = () => {
 };
 
 const container = document.getElementById("root");
-const root = ReactDOM.createRoot(container); //was in previous versions reactDom.render(container, </App>);
+const root = createRoot(container); //was in previous versions reactDom.render(container, </App>);
 root.render(React.createElement(App)); //jsx will do the React.createElement
